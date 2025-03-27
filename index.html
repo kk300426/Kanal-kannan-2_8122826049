@@ -14,8 +14,6 @@
         }
 
         body {
-            background: url('goku.jpg') no-repeat center center fixed;
-            background-size: cover;
             color: #fff;
             text-align: center;
             overflow-x: hidden;
@@ -23,6 +21,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+        }
+
+        /* Background video */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
 
         .container {
@@ -32,7 +42,7 @@
             animation: fadeIn 1.5s ease-in-out;
             position: relative;
             border: 2px solid rgba(255, 255, 255, 0.5);
-            background: rgba(0, 0, 0, 0.1); /* Very light transparent black */
+            background: rgba(0, 0, 0, 0.3); /* Slightly darker transparent background */
         }
 
         @keyframes fadeIn {
@@ -47,13 +57,6 @@
             border: 4px solid #ffcc00;
             object-fit: cover;
             margin-bottom: 20px;
-            animation: bounceIn 1.5s ease-in-out;
-        }
-
-        @keyframes bounceIn {
-            0% { transform: scale(0.5); opacity: 0; }
-            80% { transform: scale(1.1); opacity: 1; }
-            100% { transform: scale(1); }
         }
 
         h1 {
@@ -66,11 +69,10 @@
             margin: 30px 0;
             padding: 20px;
             border-radius: 10px;
-            transition: 0.3s;
             opacity: 0;
             transform: translateY(30px);
             visibility: hidden;
-            background: rgba(0, 0, 0, 0.1); /* Very light transparent black */
+            background: rgba(0, 0, 0, 0.2);
             color: #fff;
             font-size: 18px;
             font-weight: bold;
@@ -81,36 +83,6 @@
             transform: translateY(0);
             visibility: visible;
             transition: all 0.8s ease-in-out;
-        }
-
-        .section h2 {
-            font-size: 26px;
-            margin-bottom: 10px;
-            color: #ff6600;
-            border-bottom: 3px solid transparent;
-            display: inline-block;
-            padding-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .skills ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .skills ul li {
-            background: rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            margin: 5px;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .skills ul li:hover {
-            transform: scale(1.1);
-            background: rgba(0, 0, 0, 0.2);
         }
 
         .download-btn {
@@ -134,13 +106,18 @@
 </head>
 <body>
 
+    <video class="video-background" autoplay loop muted>
+        <source src="Goku.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
     <div class="container">
         <img src="passport photo.jpg" alt="Profile Photo" class="profile-img">
         <h1>Kanal Kannan A</h1>
 
         <div class="section">
             <h2>About Me</h2>
-            <p>I'm a web developer BCA student and passionate web developer with skills in HTML, CSS, JavaScript, and React.js. Eager to build responsive websites and gain hands-on experience in modern web technologies.</p>
+            <p>I'm a web development BCA student and passionate web developer with skills in HTML, CSS, JavaScript, and React.js. Eager to build responsive websites and gain hands-on experience in modern web technologies.</p>
         </div>
 
         <div class="section">
